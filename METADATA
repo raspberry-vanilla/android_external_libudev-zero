@@ -1,0 +1,16 @@
+name: "libudev-zero"
+description:
+    "Drop-in replacement for libudev intended to work with any device manager"
+
+third_party {
+homepage: "https://github.com/illiliti/libudev-zero"
+  identifier {
+    type: "Git"
+    value: "https://github.com/illiliti/libudev-zero"
+    primary_source: true
+    version: "bbeb7ad51c1edb7ab3cf63f30a21e9bb383b7994"
+  }
+  version: "bbeb7ad51c1edb7ab3cf63f30a21e9bb383b7994"
+  last_upgrade_date { year: 2025 month: 4 day: 28 }
+  license_type: NOTICE
+}

@@ -1,0 +1,49 @@
+package {
+    default_applicable_licenses: ["external_libudev_zero_license"],
+}
+
+license {
+    name: "external_libudev_zero_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-ISC",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+cc_genrule {
+    name: "libudev_zero_copy_headers",
+    srcs: ["udev.h"],
+    out: ["libudev.h"],
+    cmd: "cp $(in) $(out)",
+}
+
+cc_library_static {
+    name: "libudev-zero",
+    visibility: [
+        "//external/igt-gpu-tools",
+    ],
+    srcs: [
+        "udev.c",
+        "udev_list.c",
+        "udev_device.c",
+        "udev_monitor.c",
+        "udev_enumerate.c",
+    ],
+    generated_headers: [
+        "libudev_zero_copy_headers",
+    ],
+    export_generated_headers: [
+        "libudev_zero_copy_headers",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wmissing-prototypes",
+        "-Wstrict-prototypes",
+        "-Wno-unused-parameter",
+    ],
+}

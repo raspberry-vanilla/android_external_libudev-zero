@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: ISC
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: libudev
+Description: Daemonless replacement for libudev
+Version: @VERSION@
+URL: https://github.com/illiliti/libudev-zero
+Libs: -L${libdir} -ludev
+Cflags: -I${includedir}
