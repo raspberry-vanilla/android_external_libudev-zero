@@ -24,6 +24,7 @@ cc_library_static {
     name: "libudev-zero",
     visibility: [
         "//external/igt-gpu-tools",
+        "//vendor:__subpackages__",
     ],
     srcs: [
         "udev.c",
