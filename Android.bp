@@ -20,10 +20,13 @@ cc_genrule {
     cmd: "cp $(in) $(out)",
 }
 
-cc_library_static {
+cc_library {
     name: "libudev-zero",
+    vendor_available: true,
     visibility: [
+        "//external/ffmpeg/libavcodec",
         "//external/igt-gpu-tools",
+        "//external/v4l-utils/utils/media-ctl",
     ],
     srcs: [
         "udev.c",
